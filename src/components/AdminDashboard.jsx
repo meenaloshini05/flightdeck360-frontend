@@ -16,7 +16,7 @@ export default function AdminDashboard() {
   // fetch flights
   const fetchFlights = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/flights");
+      const res = await axios.get("https://flightdeck360-backend.onrender.com/flights");
       setFlights(res.data);
     } catch (err) {
       alert("Failed to load flights");
