@@ -31,7 +31,7 @@ export default function AdminDashboard() {
   const addFlight = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5001/flights", flight, {
+      await axios.post("https://flightdeck360-backend.onrender.com/flights", flight, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("Flight added successfully ✅");

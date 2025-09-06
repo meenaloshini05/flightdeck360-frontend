@@ -18,7 +18,7 @@ export default function BookingForm() {
 
   // fetch selected flight details
   useEffect(() => {
-    axios.get(`http://localhost:5001/flights/${id}`)
+    axios.get(`https://flightdeck360-backend.onrender.com/flights/${id}`)
       .then(res => setFlight(res.data))
       .catch(() => alert("Failed to load flight details"));
   }, [id]);
@@ -27,7 +27,7 @@ export default function BookingForm() {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:5001/bookings",
+        "https://flightdeck360-backend.onrender.com/bookings",
         {
           ...form,
           flightNumber: flight.flightNumber,

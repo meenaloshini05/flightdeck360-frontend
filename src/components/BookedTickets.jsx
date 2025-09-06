@@ -5,13 +5,13 @@ export default function BookedTickets({ token }) {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5001/bookings", {
+    axios.get("https://flightdeck360-backend.onrender.com/bookings", {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setBookings(res.data));
   }, [token]);
 
   const updateStatus = async (id, status) => {
-    await axios.put(`http://localhost:5001/bookings/${id}`, { status }, {
+    await axios.put(`https://flightdeck360-backend.onrender.com/bookings/${id}`, { status }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setBookings(bookings.map(b => b._id === id ? { ...b, status } : b));

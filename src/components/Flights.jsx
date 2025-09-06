@@ -9,7 +9,7 @@ export default function Flights({ role }) {
 
   // Fetch all flights once
   useEffect(() => {
-    axios.get("http://localhost:5001/flights")
+    axios.get("https://flightdeck360-backend.onrender.com/flights")
       .then((res) => {
         setFlights(res.data);
         setFiltered(res.data); // show all initially

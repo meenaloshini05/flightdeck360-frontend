@@ -9,7 +9,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5001/register", form);
+      await axios.post("https://flightdeck360-backend.onrender.com/register", form);
       alert("Registered successfully!");
       navigate("/login");
     } catch {

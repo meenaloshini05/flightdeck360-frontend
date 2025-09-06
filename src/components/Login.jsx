@@ -9,7 +9,7 @@ export default function Login({ setAuth }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5001/login", form);
+      const res = await axios.post("https://flightdeck360-backend.onrender.com/login", form);
       setAuth(res.data.token, res.data.role);
       navigate("/");
     } catch {

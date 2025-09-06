@@ -5,7 +5,7 @@ export default function PassengerBookings({ token }) {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5001/mybookings", {
+    axios.get("https://flightdeck360-backend.onrender.com/mybookings", {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setBookings(res.data));
   }, [token]);
